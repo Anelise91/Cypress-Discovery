@@ -38,7 +38,9 @@ class SignupPage {
         cy.get('.swal2-container .swal2-html-container').should('have.text', expectMessage)
     }
     alertMessageShouldBe(expectMessage){
-        cy.get('.alert-error').should('have.text', expectMessage)
+        //cy.get('.alert-error').should('have.text', expectMessage)
+        //combinar localizadores semelhantes, css + texto
+        cy.contains('.alert-error', expectMessage).should('be.visible')
     }
     
 }
