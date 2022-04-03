@@ -15,17 +15,18 @@ jobs:
 #       insere a cópia do projeto no container
         uses: actions/checkout@v2
       
+      
+  #         instala as dependencias do package.json
       - name: 'UI Tests - Chrome'
         uses: cypress-io/github-action@v2
         with:
-#         instala as dependencias do package.json
-          install-command: npm install
+          install-command: yarn install
           wait-on: ${{ secrets.BASE_URL }}
           wait-on-timeout: 120
           browser: chrome
           record: true
           group: 'UI - Chrome'
-          spec: buger-eats/cypress/integration/*
+          spec: buger-eats/buger-eats/cypress/integration/*
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
