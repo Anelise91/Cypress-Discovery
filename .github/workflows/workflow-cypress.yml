@@ -15,10 +15,12 @@ jobs:
 #       insere a cópia do projeto no container
         uses: actions/checkout@v2
       
+      
+  #         instala as dependencias do package.json
       - name: 'UI Tests - Chrome'
         uses: cypress-io/github-action@v2
         with:
-#         instala as dependencias do package.json
+          project: buger-eats 
           install-command: yarn install
           wait-on: ${{ secrets.BASE_URL }}
           wait-on-timeout: 120
