@@ -19,7 +19,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
 #         instala as dependencias do package.json
-          install-command: yarn install
+          install-command: npm install
           wait-on: ${{ secrets.BASE_URL }}
           wait-on-timeout: 120
           browser: chrome
